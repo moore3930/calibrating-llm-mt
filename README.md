@@ -23,8 +23,10 @@ pip install -e .
 ```
 
 # LoRA
-You can find LoRA this paper involved here:
-[LoRA_to_calibrate_TowerInstruct-Mistral-7B-v0.2](https://huggingface.co/moore3930/tower-calibrated)
+You can find LoRA this paper involved in Huggingface:
+
+- LoRA to calibrate Unbabel/TowerInstruct-Mistral-7B-v0.2: [Download](https://huggingface.co/moore3930/tower-calibrated)
+
 
 # Datasets
 You can find datasets this paper involved here:
@@ -33,6 +35,9 @@ You can find datasets this paper involved here:
 
 
 # Quick Run
+
+## Training
+
 You can reproduce the results of applying calibration on TowerInstruct-Mistral-7B in Table-1. Training will 
 takes around 1 GPU hour on H100. 
 ```
@@ -40,3 +45,8 @@ cd experiments
 sh run.sh
 ```
 
+## Inference
+```
+cd experiments
+sbatch test_run.sh
+```
