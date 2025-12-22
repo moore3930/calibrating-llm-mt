@@ -109,7 +109,7 @@ python -m llama_recipes.calibration --use_peft --peft_method lora \
         --gradient_accumulation_steps 8 \
         --alpha $ALPHA \
         --beta $BETA \
-	--gama $GAMA \
+	    --gama $GAMA \
         --lang_pairs "en-de,en-fr,en-nl,en-it,en-es,en-pt,en-ko,en-ru,en-zh" \
         --listwise_loss \
         --list_size $LIST_SIEZ \
@@ -128,22 +128,6 @@ for EPOCH in 0; do
             --beam_size 5
     evaluate_lang_directions ${TEST_DATASET} ${BASE_SYS}
 done
-
-
-:<<!
-for EPOCH in 0; do
-    BASE_SYS=results/$BASE_MODEL/calibration/${TEST_DATASET}/${SUBSET}/${SETTING}-beam5/${EPOCH}
-    python inference_formal.py --model_name Unbabel/$BASE_MODEL \
-            --peft_model $CKP_DIR/$BASE_MODEL/calibration/${SUBSET}/${SETTING}/${EPOCH} \
-            --dataset ${TEST_DATASET} \
-            --val_batch_size 8 \
-            --do_sample False \
-            --output_dir ${BASE_SYS} \
-            --lang_pairs en-de,en-fr,en-nl,en-it,en-es,en-pt,en-ko,en-ru,en-zh \
-            --beam_size 5
-    evaluate_lang_directions ${TEST_DATASET} ${BASE_SYS}
-done
-!
 
 :<<!
 # Spearman
