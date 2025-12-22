@@ -2,8 +2,6 @@
 
 Official implementation based on the PyTorch and Hugging Face Transformers libraries.
 
-[Human Annotation](https://huggingface.co/datasets/Anonymous-Account/Calibration-translation-human-eval)
-
 # Installation
 All experiments are tested with Python 3.8, torch 2.4.0
 
@@ -22,7 +20,15 @@ pip install -e .
 # Datasets
 You can find datasets this paper involved here:
 
-[calibration dataset](./src/llama_recipes/customer_data/calibration), [wmt24_testset](./src/llama_recipes/customer_data/wmt24_testset), [wmt22_metric_testset](./src/llama_recipes/customer_data/da_dataset)
+[Offline Calibration Dataset](./src/llama_recipes/customer_data/calibration)
+
+[WMT24_Testset](./src/llama_recipes/customer_data/wmt24_testset)
+
+[WMT22_QE_Testset](./src/llama_recipes/customer_data/da_dataset)
+
+Human annotated results for Tower and Calibrated Tower in Table-1 can be found here:
+
+[Human Annotations](https://huggingface.co/datasets/Anonymous-Account/Calibration-translation-human-eval)
 
 
 # Quick Run
